@@ -56,25 +56,6 @@ const getApiData = async() => {
     })
 return apiInfo;
 }
-//  async function getAllDogs(){
-  
-
-//     const apiDog =await axios.get('https://api.thedogapi.com/v1/breeds');
-//     const apiData = await apiDog.data.map( dg =>{
-//     return {
-//         id: dg.id,
-//         name: dg.name,
-//         height: dg.height,
-//         weight: dg.weight,
-//         temperaments: dg.temperament,
-//         life_span: dg.life_span,
-//         image: dg.image.url,
-//     }
-//     return apiData
-//     })
-    
-//     console.log(apiData)}
-
 
 
 
@@ -123,14 +104,25 @@ router.get('/', async(req,res)=>{
     })
 
     router.post('/', async(req,res)=>{
-     let{name,height,weight,life_span,temperaments}=req.body;
+
+     let{name,min_height,max_height,min_weight,max_weight,life_span,temperaments}=req.body;
+      
+      const arrayHeight= []
+      const minHeight = min_height;
+      const maxHeight = max_height;
+      //const arrayHeight =`${minHeight}}-${maxHeight}`;
+      arrayHeight.push(minHeight,maxHeight)
+      const arrayWeight =[]
+      const minWeight =  min_weight;
+      const maxWeight = max_weight;
+      //const arrayWeight = `${minWeight}-${maxWeight}`;
+      arrayWeight.push(minWeight,maxWeight)
       let dog = await Dog.create({
-       name,
-       height,
-       weight,
-       life_span
-      })
-      let temps =["Bold","Happy"]
+        name,
+        height: arrayHeight,
+        weight: arrayWeight,
+        life_span
+       })
       let associatedTemp = await Temperament.findAll({
         where: {name: temperaments},
          })

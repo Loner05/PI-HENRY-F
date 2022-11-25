@@ -12,7 +12,6 @@ return(
     </div>
 <NavLink to="/home"><button className={style.Navbar_button} >Home</button></NavLink>
 <NavLink to="/createdog"><button className={style.Navbar_button}>Create Dog</button></NavLink>
-<NavLink to="about"><button className={style.Navbar_button}>About</button></NavLink>
 </div>
 )
 }

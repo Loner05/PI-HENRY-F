@@ -12,8 +12,10 @@ const CreateDog = () =>{
 
 const initialData = {
 name:'',
-height:'',
-weight:'',
+min_height:'',
+max_height: '',
+min_weight: '',
+max_weight: '',
 life_span:'',
 temperaments: []
 }
@@ -40,15 +42,16 @@ if(!form.name.trim()){
 }else if(!regexName.test(form.name)){
    errors.name = " Enter a valid name" 
 }
-if(!form.height.trim()){
- errors.height ="Height is required"
-}else if(form.height < 15 || form.height > 110){
-errors.height = "height can't be less than 15cm and more than 115cm"
+// if(!form.min_height.trim() || !form.min_height.trim()){
+//  errors.height ="Height is required"
+// }else
+ if(form.min_height < 15 || form.max_height > 110){
+errors.height = "height mesures can't be less than 15cm and more than 115cm"
 
 }
-if(!form.weight.trim()){
+if(!form.min_weight.trim()||!form.max_weight.trim()){
 errors.weight="Weight is required"
-}else if(form.weight < 1 || form.weight > 80){
+}else if(form.min_weight < 1 || form.max_weight > 95){
     errors.weight= "weight can't be less than 1Kg and more than 80Kg"
   
     }
@@ -106,14 +109,25 @@ return(
 <input className={style.Form_inputs} value={form.name}  type="text"  name="name" onChange={handleChange}/>
 {errors.name && <div className="alert">{errors.name}</div>}
 </div>
+{/* <div className={style.Form_labelinputs}>
+<label>Height-min:</label>
+<input className={style.Form_inputs}  value={form.min_height} type="number" name="height_min" onChange={handleChange}/>
+<label>Height-max:</label>
+<input className={style.Form_inputs}  value={form.max_height} type="number" name="height_max" onChange={handleChange}/>
+{errors.height &&<div className="alert">{errors.height}</div>}
+</div> */}
 <div className={style.Form_labelinputs}>
-<label>Height:</label>
-<input className={style.Form_inputs}  value={form.height} type="number" name="height" onChange={handleChange}/>
+<label>Height-min:</label>
+<input className={style.Form_inputs}  value={form.min_height}  type="number" name="min_height" onChange={handleChange}/>
+<label>Height-max:</label>
+<input className={style.Form_inputs}  value={form.max_height}  type="number" name="max_height" onChange={handleChange}/>
 {errors.height &&<div className="alert">{errors.height}</div>}
 </div>
 <div className={style.Form_labelinputs}>
-<label>Weight:</label>
-<input className={style.Form_inputs}  value={form.weight}  type="number" name="weight" onChange={handleChange}/>
+<label>Weight-min:</label>
+<input className={style.Form_inputs}  value={form.min_weight}  type="number" name="min_weight" onChange={handleChange}/>
+<label>Weight-max:</label>
+<input className={style.Form_inputs}  value={form.max_weight}  type="number" name="max_weight" onChange={handleChange}/>
 {errors.weight &&<div className="alert">{errors.weight}</div>}
 </div>
 <div className={style.Form_labelinputs}>
