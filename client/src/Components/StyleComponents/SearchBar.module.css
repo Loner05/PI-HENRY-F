@@ -1,0 +1,41 @@
+.Searchcontainer{
+
+padding-top: 130px;
+display: flex;
+justify-content: center;
+padding-bottom: 30px;
+
+}
+ 
+ 
+ 
+ 
+ .input_wrapper {
+    position: relative;
+    width: 600px;
+    align-items: center;
+    
+  }
+  
+
+  
+  
+  .SearchBar_inputsearch {
+    box-sizing: border-box;
+  color: #191919;
+  padding: 15px 15px 15px 35px;
+  width: 100%;
+  font-size: larger;
+  border-radius: 15px;
+  }
+  
+  .SearchBar_inputlogo {
+    color: #191919;
+    position: absolute;
+    width:40px;
+    height: 40px;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+

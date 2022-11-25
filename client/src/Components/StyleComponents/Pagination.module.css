@@ -1,0 +1,42 @@
+
+
+
+
+.Pagination_container{
+
+display: flex;
+flex-direction: row;
+width: auto;
+
+
+
+}
+
+.Pagination_container ul{
+display: flex;
+list-style: none;
+flex-direction: row;
+ 
+width: fit-content;
+}
+ .Pagination_container ul li{
+
+    margin:0.2px
+    } 
+.Pagination_button{
+    
+    background-color: white;
+    font-size: large;
+    color: darkslategrey;
+    margin: 1px
+    
+    }
+
+.Pagination_button:focus{
+border: 5px blue  solid ;
+font-size: large;
+
+
+text-align: center;
+align-content: center;
+}

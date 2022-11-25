@@ -1,0 +1,25 @@
+
+
+.Home_supercontainer{
+background-color: rgb(230, 230, 230);
+
+
+}
+
+.Home_cardsbox{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5% 0%;
+    justify-items: center;
+    padding: 2rem 0 2rem 0;
+
+}
+
+.Home_pagination{
+ background-color: silver;
+  align-content: center;
+ display: flex;
+ align-items: center;
+ position: center;
+
+}
